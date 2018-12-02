@@ -18,8 +18,7 @@ fn part_2(data: &Vec<i32>) -> i32 {
 }
 
 fn main() {
-  let file = File::open("input.txt").expect("File not found");
-  let buf = BufReader::new(file);
+  let buf = include_str!("../inputs/input.txt");
   let data : Vec<i32> = buf.lines()
     .map(| line | line.unwrap())
     .map(| s | s.as_str().parse::<i32>().unwrap())
